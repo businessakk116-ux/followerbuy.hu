@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>FollowerBuy — Közösségi profilok és árlista</title>
+<style>
+:root{--bg:#0f1724;--card:#0b1220;--accent:#ff4d6d;--text:#e6eef8}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+  background:linear-gradient(180deg,#071025 0%,#071827 100%);
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px
+}
+.card{
+  background:rgba(255,255,255,0.03);
+  padding:28px;
+  border-radius:14px;
+  box-shadow:0 8px 30px rgba(2,6,23,0.6);
+  width:100%;
+  max-width:520px;
+  text-align:center
+}
+h1{margin:0 0 8px;font-size:20px}
+p{margin:0 0 20px;opacity:0.85}
+.links{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap
+}
+a.btn,button.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 18px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  background:linear-gradient(90deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.04);
+  transition:transform .12s ease,box-shadow .12s ease;
+  cursor:pointer
+}
+a.btn:active,button.btn:active{transform:translateY(1px)}
+a.btn:hover,button.btn:hover{
+  box-shadow:0 6px 20px rgba(0,0,0,0.5);
+  transform:translateY(-4px)
+}
+.icon{
+  width:25px;
+  height:25px;
+  display:inline-block;
+  vertical-align:middle
+}
+.tiktok-icon{
+  filter:drop-shadow(0 0 4px #00f2ea) drop-shadow(0 0 4px #ff0050)
+}
+.note{margin-top:16px;font-size:13px;opacity:0.8}
+#arlista{
+  display:none;
+  margin-top:20px;
+  text-align:left;
+  font-family:monospace;
+  background:rgba(255,255,255,0.05);
+  padding:12px;
+  border-radius:10px;
+  white-space:pre-line
+}
+</style>
+</head>
+<body>
+<main class="card" role="main">
+<h1>FollowerBuy — Közösségi profilok</h1>
+<p>Kattints az ikonokra, és megnyílik a profilom a megfelelő oldalon.</p>
+
+<div class="links">
+  <!-- Instagram -->
+  <a class="btn" href="https://www.instagram.com/followerbuy.hu?igsh=MWprbW1uenRib2ljOA==" target="_blank" rel="noopener noreferrer" aria-label="Megnyitás Instagram profil">
+    <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo"> Instagram
+  </a>
+
+  <!-- TikTok -->
+  <a class="btn" href="https://www.tiktok.com/@followerbuy.hu" target="_blank" rel="noopener noreferrer" aria-label="Megnyitás TikTok profil">
+    <img class="icon tiktok-icon" src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok logo"> TikTok
+  </a>
+
+  <!-- Árlista gomb saját logóval -->
+  <button class="btn" id="arlistaBtn">
+    <img class="icon" src="c:\Users\Asus\Downloads\Hozz létre egy logót. Az oldal neve_ followerbuy.hu ennek az oldalnak kéne logó.. (1).jpg" alt="FollowerBuy logo"> Árlista
+  </button>
+</div>
+
+<div id="arlista">
+1000 követő = 2000 Ft
+2000 követő = 3000 Ft
+3000 követő = 4000 Ft
+4000 követő = 5000 Ft
+5000 követő = 6000 Ft
+
+1000 like = 500 Ft
+2000 like = 1000 Ft
+3000 like = 1500 Ft
+4000 like = 2000 Ft
+5000 like = 2500 Ft
+</div>
+
+<p class="note">Megjegyzés: a linkek új fülön nyílnak meg. Az árlista gomb megnyomásával az árak jelennek meg.</p>
+</main>
+
+<script>
+const btn = document.getElementById('arlistaBtn');
+const lista = document.getElementById('arlista');
+btn.addEventListener('click', () => {
+  lista.style.display = lista.style.display === 'none' || lista.style.display === '' ? 'block' : 'none';
+});
+</script>
+</body>
+</html>
